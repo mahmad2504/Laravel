@@ -242,6 +242,6 @@ class ConfluenceController extends Controller
 			}
 		}
 		
-		return view('confluence.index',compact('data','tabledata'));
+		return view('Confluence.index',compact('data','tabledata'));
 	}
 }
