@@ -11,7 +11,7 @@ class Confluence extends App
 	public $timezone='Asia/Karachi';
 	public $scriptname = 'confluence';
 	public $options = 0;
-	public $datafolder = "D:/xampp/htdocs/nscriptwallet/data/confluencereminder";
+	public $datafolder = "/data/confluence";
 	public $jira_fields = ['key','status','statuscategory','summary','assignee','self'];
 	public $jira_server = 'EPS';
 	public $query="";

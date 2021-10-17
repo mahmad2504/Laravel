@@ -44,6 +44,7 @@ class App
 		$this->admin_email = env("ADMIN_EMAIL");
 		$this->app = $app;
 		$this->datafolder = env("INSTALL_FOLDER").$this->datafolder;
+		
 		if(app()->runningInConsole())
 		{
 			$app->InConsole(true);
@@ -327,6 +328,7 @@ class App
 	}
 	function JiraSearch($jql=null)
 	{
+		
 		if($jql==null)
 			return Jira::FetchTickets($this->query);
 		else
