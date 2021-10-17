@@ -4,7 +4,7 @@ use App\Apps\App;
 use App\Libs\Jira\Fields;
 use App\Libs\Jira\Jira;
 use Carbon\Carbon;
-use App\Email;
+use App\Libs\Utility\Email;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 class Confluence extends App
 {
