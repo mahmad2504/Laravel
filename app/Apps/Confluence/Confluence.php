@@ -492,7 +492,7 @@ class Confluence extends App
 				$sec = 9999999;
 				if(isset($pcr->emailedon))
 				{
-					$now = Timestamp();;
+					$now = CTimestamp();
 					$sec = GetBusinessSeconds(CDate(null,$pcr->emailedon),CDate(null,$now),9,18);
 					//dump("Business seconds = ".SecondsToString($sec,9));
 				}
@@ -504,7 +504,7 @@ class Confluence extends App
 						$data['cc'][]= $this->FetchUser($pm)->emailAddress;
 					$this->SendMail($data['msg'],$data['to'],$data['cc'],$releaseplan->baseline->project.' - PCR Approval - Pending',true);
 					if($this->options['email']==1)
-						$pcr->emailedon = Timestamp();
+						$pcr->emailedon = CTimestamp();
 				}
 				else
 					dump('Email not due : '.$incomplete.'/'.($incomplete+$complete).' pending for PCR#'.$pcrnum.' for '.$releaseplan->category.":".$releaseplan->name." [".SecondsToString($sec,9)."]");
@@ -567,7 +567,7 @@ class Confluence extends App
 			
 			$duedate = '';
 			if($bl_milestone->duedate > 0)
-				$duedate=$this->TimestampToObj($bl_milestone->duedate)->format('M d, Y');
+				$duedate=CDateTime($bl_milestone->duedate)->format('M d, Y');
 			$msg .= '<td style="border: 1px solid black;text-align:left">'.$duedate.'</td>';
 			$j=1;
 			$prev = $bl_milestone->duedate;
@@ -577,7 +577,7 @@ class Confluence extends App
 				$duedate = '';
 				if($pcr_milestone->duedate > 0)
 				{
-					$duedate=$this->TimestampToObj($pcr_milestone->duedate)->format('M d, Y');
+					$duedate=CDateTime($pcr_milestone->duedate)->format('M d, Y');
 					if($pcr_milestone->duedate != $prev)
 					{
 						if($j == $pcrnum)
