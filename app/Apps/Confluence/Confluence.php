@@ -471,7 +471,7 @@ class Confluence extends App
 		foreach($pcrs as $pcr)
 		{
 			$this->query = 'key in ('.$pcr->jiraid.')';
-			$jtasks = $this->FetchJiraTickets();
+			$jtasks = $this->JiraSearch();
 			$pcr->jira = $jtasks[$pcr->jiraid];
 			foreach($pcr->tasks as $task)
 				$task->assignee = $this->FetchUser($task->riuserkey);
