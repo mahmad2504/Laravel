@@ -2,4 +2,5 @@ Laravel
 composer create-project  laravel/laravel laravel 8.6
 composer require mongodb/mongodb:1.5
 composer require lesstif/php-jira-rest-client
+composer require phpmailer/phpmailer
 composer dump-autoload

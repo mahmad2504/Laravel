@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+    laravel:
+        container_name: laravel
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+          - mongodb
+    mongodb:
+        image : mongo
+        container_name: mongodb
+        environment:
+            - PUID=1000
+            - PGID=1000
+        volumes:
+            - ./mongodb:/data/db
+        ports:
+            - 27017:27017
+        restart: unless-stopped
+   
