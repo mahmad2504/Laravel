@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('root',['email'=>env("ADMIN_EMAIL")]);
 });
+
+Route::get('/confluence','App\Http\Controllers\Confluence\ConfluenceController@index')->name('confluence.index');
