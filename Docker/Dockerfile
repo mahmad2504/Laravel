@@ -4,8 +4,8 @@ RUN apt update && apt-get install -y git && apt install -y wget php-cli php-zip 
 RUN apt-get install php8.0-mongo
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN git clone https://github.com/mahmad2504/laravel.git 
-WORKDIR /laravel
-RUN composer install
-COPY .env .
-RUN chmod a+x gitfetch.bat && ./gitfetch.bat && chmod a+x gitfetch.bat 
-RUN bash -c "php artisan serve --host 0.0.0.0"
+#WORKDIR /laravel
+#RUN composer install
+#COPY .env .
+#RUN chmod a+x gitfetch.bat && ./gitfetch.bat && chmod a+x gitfetch.bat 
+#RUN bash -c "php artisan serve --host 0.0.0.0"
