@@ -10,7 +10,10 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "lesstif/php-jira-rest-client": "^2.6",
+        "mongodb/mongodb": "1.5",
+        "phpmailer/phpmailer": "^6.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -25,7 +28,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+		"files": [
+			"app/Libs/Utility/Helper.php"
+		]
     },
     "autoload-dev": {
         "psr-4": {
