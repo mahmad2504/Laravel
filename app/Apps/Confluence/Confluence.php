@@ -1031,6 +1031,17 @@ class Confluence extends App
 		$update = $this->options['update'];
 		$projects = $this->FetchReleasePlans(1);
 		$sproject = null;
+		
+		if(($id == 'all')&&($update==1))
+		{
+			foreach($projects as $project)
+			{
+				unset($project->_id);
+				$this->Save($project,'baseline');
+			}
+			dump("Updated");
+			return;
+		}
 		foreach($projects as $project)
 		{
 			if($id == 0) 
@@ -1040,8 +1051,8 @@ class Confluence extends App
 				$this->CheckBaselineDiffReleasePlans($project);
 				$sproject = $project;
 			}
-		}
-		if(($sproject == null)&&($id >0))
+		}	
+		if(($sproject == null)&&($id > 0))
 			dump('Not found');
 		else if(($sproject != null)&&($update==1))
 		{
