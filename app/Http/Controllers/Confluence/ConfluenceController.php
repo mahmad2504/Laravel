@@ -182,7 +182,7 @@ class ConfluenceController extends Controller
 		}
 		
 		
-		usort($plans,function ($a, $b) { return (strtolower($a->category) < strtolower($b->category)); });
+		usort($plans,function ($a, $b) { return (strtolower($a->category) <=> strtolower($b->category)); });
 		foreach($plans as $plan)
 		{
 			//dump("*****************".$project->id."   ".$plan->name."*****************");
