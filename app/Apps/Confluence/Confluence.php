@@ -493,7 +493,7 @@ class Confluence extends App
 				if(isset($pcr->emailedon))
 				{
 					$now = CTimestamp();
-					$sec = GetBusinessSeconds(CDate(null,$pcr->emailedon),CDate(null,$now),9,18);
+					$sec = GetBusinessSeconds(CDateTime($pcr->emailedon),CDateTime(),9,18);
 					//dump("Business seconds = ".SecondsToString($sec,9));
 				}
 				if(($sec >= (32400*2))||($this->options['email_resend']==1)) 
