@@ -11,7 +11,7 @@ class Sync extends Command
      *
      * @var string
      */
-	protected $signature = 'confluence:sync {--force=0} {--rebuild=0}';
+	protected $signature = 'confluence:sync {--force=0} {--rebuild=0} {--email_resend=0}';
 
     /**
      * The console command description.
